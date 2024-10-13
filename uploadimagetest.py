@@ -11,7 +11,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-genai.configure(api_key='AIzaSyC_xdMDEPfqZmR0xEx0lGq5Al5-X_jQKRc')
+genai.configure(api_key='API_KEY')
 model = genai.GenerativeModel("gemini-1.5-flash")
 curr_ingredients = []
 
