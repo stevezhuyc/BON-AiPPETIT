@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1 Website</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<!-- Navbar Section -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="#home" id="navbar__logo">
+      <!--            <img src="images/dubhacks-2.png" alt="Logo" class="navbar__logo-img">-->
+      <img src="{{ url_for('static', filename='images/dubhacks-2.png') }}" alt="dubhacks-2.png" width="150" height="auto">
+
+
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+  <ul class="navbar__menu">
+    <li class="navbar__item">
+
+    </li>
+    <li class="navbar__item">
+
+    </li>
+    <li class="navbar__item">
+
+    </li>
+    <li class="navbar__btn">
+
+    </li>
+  </ul>
+  </div>
+</nav>
+
+<section id="loading" class="loading">
+  <h1 class="loading__heading"><span>Here is Your Menu!</span></h1>
+  <div class="loading__container">
+    <div class="image-container">
+      <p>Please choose your dish</p>
+      <img src="{{ url_for('static', filename='images/menu.png') }}" alt="menu" class="menu-image">
+
+
+      <!-- Overlayed content on the image -->
+      <div class="overlay-content">
+        {% for item in string_list %}
+        <a href="{{ url_for('item_page', item=item) }}" class="overlay-link">{{ item }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</html>

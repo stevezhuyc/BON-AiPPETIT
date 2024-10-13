@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>test1 Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<!-- Navbar Section -->
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="#home" id="navbar__logo">
+<!--            <img src="images/dubhacks-2.png" alt="Logo" class="navbar__logo-img">-->
+            <img src="{{ url_for('static', filename='images/dubhacks-2.png') }}" alt="dubhacks-2.png" width="300" height="auto">
+
+
+        </a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <ul class="navbar__menu">
+        <li class="navbar__item">
+      
+        </li>
+        <li class="navbar__item">
+          
+        </li>
+        <li class="navbar__item">
+            
+        </li>
+        <li class="navbar__btn">
+  
+        </li>
+    </ul>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+    <div class="hero__container">
+        <h1 class="hero__heading">Welcome to <span>BON AiPPETIT</span></h1>
+        <p class="hero__description"> BON AiPPETIT is a program fueled by AI that can recommend
+            meals and recipes to make based on what a user has in their fridge by uploading a photo.
+        </p>
+        <button class="main_btn"><a href="#skills">Let's Get Started!</a></button>
+    </div>
+ </div>
+
+<!-- Image Upload Section -->
+<section id="skills" class="skills">
+    <h1 class="skill__heading"><span>Image Upload</span></h1>
+    <div class="skills__container">
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageInput" style="display: none;" required>
+
+            <div class="skills__card" onclick="document.getElementById('imageInput').click();">
+                <img src="{{ url_for('static', filename='images/fast-food.png') }}" alt="fast-food">
+                <p>Upload</p>
+            </div>
+        </form>
+    </div>
+
+    <p class="skills__description">Upload an image of what's in your fridge<br>
+        Make it as clear as possible
+    </p>
+
+    <button class="submit__button" onclick="submitForm()">Submit</button>
+</section>
+
+<script>
+    function submitForm() {
+        var inputFile = document.getElementById('imageInput').files[0];
+
+        if (inputFile) {
+            document.getElementById('uploadForm').submit();
+        } else {
+            alert("Please upload an image before submitting.");
+        }
+    }
+</script>
+
+
+</html>

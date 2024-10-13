@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ item }} - Recipe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<!-- Navbar Section -->
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="#home" id="navbar__logo">
+      <img src="{{ url_for('static', filename='images/dubhacks-2.png') }}" alt="dubhacks-2.png" width="150" height="auto">
+    </a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+  <ul class="navbar__menu">
+    <li class="navbar__item"></li>
+    <li class="navbar__item"></li>
+    <li class="navbar__item"></li>
+    <li class="navbar__btn"></li>
+  </ul>
+</nav>
+
+<!-- Recipe Section -->
+<section id="recipe" class="recipe">
+  <h1 class="recipe__heading"><span>Your Recipe is Ready!</span></h1>
+  <div class="recipe__container">
+    <div class="recipe__card">
+      <img src="{{ url_for('static', filename='images/dubhacks-4.png') }}" alt="dubhacks-4">
+      <p>Enjoy your meal! Here's what you can make with the ingredients from your fridge.</p>
+      <h2>Recipe for: {{ item }}</h2>
+      <p>{{ recipe|safe }}</p>
+    </div>
+  </div>
+</section>
+
+<a href="/" class="back-to-menu">Back to menu</a>
+
+</body>
+</html>
